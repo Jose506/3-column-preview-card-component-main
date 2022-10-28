@@ -1,0 +1,123 @@
+:root {
+
+    /*Font Family*/
+    --fontPrimary: 'Big Shoulders Display', cursive;
+    --fontSecundary: 'Lexend Deca', sans-serif;
+
+    /*Colors*/
+
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+
+    /*Neutral*/
+
+    --transparentWhite: hsla(0, 0%, 100%, 0.75);
+    --veryLightGray: hsl(0, 0%, 95%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 15px;
+}
+
+/*card-preview*/
+.card-preview-content {
+    display: flex;
+    max-width: 920px;
+    border-radius: 8px;
+}
+
+.card-preview {
+    flex-basis: 33.3%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: space-between;
+}
+
+
+.card-preview:nth-child(1){
+    background-color: var(--brightOrange);
+    border-radius: 8px 0 0 8px;
+}
+.card-preview:nth-child(2){
+    background-color: var(--darkCyan);
+}
+.card-preview:nth-child(3){
+    background-color: var(--veryDarkCyan);
+    border-radius: 0 8px 8px 0;
+}
+
+.card-preview__icon {
+    width: 4rem;
+    margin-bottom: .5rem;
+}
+
+.card-preview__title {
+    font-family: var(--fontPrimary);
+    color: var(--veryLightGray);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.card-preview__desc {
+    margin-top: 0;
+    font-family: var(--fontSecundary);
+    color: var(--transparentWhite);
+    line-height: 1.65;
+}
+
+.card-preview__btn {
+    margin-top: 4.3rem;
+    width: 146px;
+    font-family: var(--fontSecundary);
+    border-radius: 50px;
+    padding: .85rem;
+    letter-spacing: 1px;
+    background-color: white;
+    border-style: solid;
+    mix-blend-mode: screen;
+    border-color: white;
+    transition: background-color .2s;
+}
+
+.card-preview__btn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+
+/*Responsive*/
+
+@media (max-width: 600px) {
+    body {
+        justify-content: unset;
+    }
+    .card-preview-content {
+        flex-direction: column;
+    }
+    .card-preview__btn {
+        margin-top: 1.5rem;
+    }
+
+    .card-preview:nth-child(1){
+        background-color: var(--brightOrange);
+        border-radius: 8px 8px 0 0;
+    }
+    .card-preview:nth-child(2){
+        background-color: var(--darkCyan);
+    }
+    .card-preview:nth-child(3){
+        background-color: var(--veryDarkCyan);
+        border-radius: 0 0 8px 8px;
+    }
+}
